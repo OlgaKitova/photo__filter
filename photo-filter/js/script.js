@@ -15,6 +15,19 @@ let result = document.querySelectorAll('.result');
 //Canvas
 const canvas = document.querySelector('canvas');
 let total = 0; 
+
+// База данных фотографий
+
+const base = 'https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/';
+const imagesMorning = ['01.jpg', '02.jpg', '03.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'];
+const imagesDay = ['01.jpg', '02.jpg', '03.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'];
+const imagesEvening = ['01.jpg', '02.jpg', '03.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'];
+const imagesNight = ['01.jpg', '02.jpg', '03.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'];
+let i = 0;
+
+const dateNow = new Date();
+const dateHours = dateNow.getHours();
+
 // Функция переключателя кнопки и изменения цвета при нажатии
 function activeSwitchButton(btns) {
   btnTotal.forEach(btn => btn.classList.remove('btn-active'));
@@ -24,16 +37,42 @@ function activeSwitchButton(btns) {
 loadBtn.addEventListener('click', () => {
   activeSwitchButton(loadBtn);
 });
-btnNext.addEventListener('click', () => {
-  activeSwitchButton(btnNext);
-});
 // Функция загрузки, отрисовки изображения  в канве и сохранения парметров
 function drawImage() {
   const canvas = document.querySelector('canvas');
   const img = new Image();  
   img.setAttribute('crossOrigin', 'anonymous');
-  img.src = 'https://github.com/rolhttps://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/';
-  //Загрузка изображения с компьютера
+ // Функция изменения фото при клике на кнопку Next Picture
+changeTimeImg();
+function changeTimeImg() {
+  let imageSrc, index;
+    if(dateHours > 6 && dateHours < 12) {
+     index = i % imagesMorning.length;
+     imageSrc = base + 'morning/' + imagesMorning[index];
+    }
+    if(dateHours > 12 && dateHours < 18) {
+      index = i % imagesDay.length;
+     imageSrc = base + 'day/' + imagesDay[index];
+    }
+    if(dateHours > 18 && dateHours < 24) {
+      index = i % imagesEvening.length;
+     imageSrc = base + 'evening/' + imagesEvening[index];
+    }
+    if(dateHours > 24 && dateHours < 6) {
+      index = i % imagesNight.length;
+     imageSrc = base + 'night/' + imagesNight[index];
+    }
+  i++;
+  btnNext.disabled = true;
+  setTimeout(function() { btnNext.disabled = false }, 1000);
+  img.src = imageSrc;
+}
+// Кнопка по переключению изображений
+btnNext.addEventListener('click', () => {
+   activeSwitchButton(btnNext);
+    changeTimeImg();
+  });
+  //Загрузка изображения с компьютера
   loadBtn.addEventListener('change', (event) => {
     const fileList = event.target.files;
     file = fileList[0];
