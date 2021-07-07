@@ -1,6 +1,6 @@
 # Photo Philter
 ---
-Deploy: [photo filter](https://olgakitova.github.io/photo__philter/photo-filter/)
+Deploy: [photo filter](https://olgakitova.github.io/photo__filter/photo-filter/)
 ---
 The following actions are implemented in the app:
 + Overlaying filters with sliders;
