@@ -49,6 +49,7 @@ function drawImage() {
  // Функция изменения фото при клике на кнопку Next Picture
 changeTimeImg();
 function changeTimeImg() {
+  reset.click();
   let imageSrc, index;
     if(dateHours >= 6 && dateHours < 12) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -84,6 +85,7 @@ btnNext.addEventListener('click', () => {
   });
   //Загрузка изображения с компьютера
   loadBtn.addEventListener('change', (event) => {
+    reset.click();
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     const fileList = event.target.files;
     file = fileList[0];
@@ -146,7 +148,7 @@ drawImage();
      link.remove();
      total-=1;
 }
-link.remove(); 
+link.remove();
 }
 // Функция вызова скачивания с помощью кнопки
 btnSave.addEventListener('click', () => {
