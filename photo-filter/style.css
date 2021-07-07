@@ -9,14 +9,18 @@ a:focus {
 }
 body {
   min-height: 100vh;
-  background-color: #313940;
+  background: -webkit-linear-gradient(225deg, rgb(9, 14, 72) 9%, rgb(0, 180, 164));
+  background: -moz-linear-gradient(225deg, rgb(9, 14, 72) 9%, rgb(0, 180, 164));
+  background: linear-gradient(225deg, rgb(9, 14, 72) 9%, rgb(0, 180, 164));
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
 .header {
   text-align: center;
   width: 100%;
-  background: #313940;
+  background: -webkit-linear-gradient(225deg, rgb(9, 14, 72) 9%, rgb(0, 180, 164));
+  background: -moz-linear-gradient(225deg, rgb(9, 14, 72) 9%, rgb(0, 180, 164));
+  background: linear-gradient(225deg, rgb(9, 14, 72) 9%, rgb(0, 180, 164));
   border-bottom: 1px solid;
   border-image-slice: 1;
   border-image-source: linear-gradient(to left, #38495a, #a2abb3, #38495a);
@@ -212,7 +216,9 @@ img {
   border-top: 1px solid;
   border-image-slice: 1;
   border-image-source: linear-gradient(to left, #38495a, #a2abb3, #38495a);
-  background-color: #313940;
+  background: -webkit-linear-gradient(45deg, rgb(9, 14, 72) 9%, rgb(0, 180, 164));
+  background: -moz-linear-gradient(45deg, rgb(9, 14, 72) 9%, rgb(0, 180, 164));
+  background: linear-gradient(45deg, rgb(9, 14, 72) 9%, rgb(0, 180, 164));
 }
 .footer-container {
   padding: 0 15px;
