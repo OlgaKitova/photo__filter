@@ -23,7 +23,7 @@ body {
   background: linear-gradient(225deg, rgb(9, 14, 72) 9%, rgb(0, 180, 164));
   border-bottom: 1px solid;
   border-image-slice: 1;
-  border-image-source: linear-gradient(to left, #38495a, #a2abb3, #38495a);
+  border-image-source: linear-gradient(180deg, rgb(9, 14, 72) 9%, rgb(0, 180, 164));
 }
 .header-title {
   line-height: 60px;
@@ -215,7 +215,7 @@ img {
 .footer {
   border-top: 1px solid;
   border-image-slice: 1;
-  border-image-source: linear-gradient(to left, #38495a, #a2abb3, #38495a);
+  border-image-source: linear-gradient(90deg, rgb(9, 14, 72) 5%, rgb(0, 180, 164));
   background: -webkit-linear-gradient(45deg, rgb(9, 14, 72) 9%, rgb(0, 180, 164));
   background: -moz-linear-gradient(45deg, rgb(9, 14, 72) 9%, rgb(0, 180, 164));
   background: linear-gradient(45deg, rgb(9, 14, 72) 9%, rgb(0, 180, 164));
@@ -231,7 +231,8 @@ img {
 }
 .github {
   display: block;
-  width: 120px;
+  text-decoration: none;
+  min-width: 120px;
   height: 45px;
   padding-left: 45px;
   background-image: url('assets/svg/github.svg');
@@ -245,7 +246,7 @@ img {
   transition: 0.3s;
 }
 .github:hover {
-  color: #fff;
+  color: rgb(0, 180, 164);
 }
 .rss {
   display: block;
